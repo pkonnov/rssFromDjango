@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^rss_news/', include('rss.apps.rss_news.urls'))
+    url(r'^', include('rss.apps.rss_news.urls'))
 ]
