@@ -5,7 +5,7 @@ from django.db import models
 
 class Post(models.Model):
     id = models.BigIntegerField(primary_key=True)
-    title = models.TextField()
+    title = models.CharField(max_length=60)
     text = models.TextField()
 
     def __str__(self):
