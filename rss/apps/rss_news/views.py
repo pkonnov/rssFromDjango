@@ -10,8 +10,7 @@ def index(request):
     number = random.randrange(0, 100)
 
     context = {
-        'value': 'Hello Python!',
-        'number': str(number)
+        # 'posts': posts
     }
 
     return render(request, "index.html", context)
