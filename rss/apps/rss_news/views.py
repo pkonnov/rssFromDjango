@@ -18,4 +18,9 @@ def index(request):
 
 
 def post(request, index):
-	 return HttpResponse(str(index))
+	try:
+		post = Post.objects.get(id=index)
+		result = post.text
+	except Post.DoesNotExist:
+		result = "Does not exist"
+	return HttpResponse(result)
