@@ -7,10 +7,15 @@ from rss.apps.rss_news.models import Post
 
 def index(request):
 
-    posts = Post.objects.all()
+    posts = reversed(Post.objects.all())
 
     context = {
         'posts': posts
     }
 
     return render(request, "index.html", context)
+
+
+
+def post(request, index):
+	 return HttpResponse(str(index))
