@@ -39,6 +39,7 @@
                   <div class="row">
                       <div class="col-12">
                           <h3 class="my-2">{{ post.title }}</h3>
+                          <span class="badge badge-primary">{{ post.date }}</span>
                           <hr>
                       </div>
                   </div>
@@ -51,7 +52,7 @@
               <div class="row">
                   <div class="col-12 text-right">
                       <div class="btn-group my-2 mx-2">
-                          <button class="btn btn-outline-success">Read</button>
+                          <button href="{% url 'post' %}" class="btn btn-outline-success">Read</button>
                           <button class="btn btn-outline-dark">Add Favorite</button>
                       </div>
                   </div>
