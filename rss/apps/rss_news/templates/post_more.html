@@ -1,5 +1,10 @@
-{% extends 'bootstrap4.html' %}
-{% bootstrap 4 %}
+{% extends 'index.html' %}
+{% load bootstrap4 %}
 {% block bootstrap4_content %}
-{{ hyi }}
+{% include "navbar.html" %}
+{% block index_content %}
+	{{ post.title }}
+	{{ post.text }}
+	{{ post.date }}
+{% endblock %}
 {% endblock %}

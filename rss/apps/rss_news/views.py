@@ -20,7 +20,16 @@ def index(request):
 def post(request, index):
 	try:
 		post = Post.objects.get(id=index)
-		result = post.text
+		
+		previous_id = post.id - 1
+		next_id = post.id + 1
+		context = {
+			'post': post,
+			'previous_id': previous_id,
+			'next_id': next_id,
+			'max_id': len(Post.objects.all())
+		}
+		return render(request, "post_more.html", context)
 	except Post.DoesNotExist:
 		result = "Does not exist"
-	return HttpResponse(result)
+		return HttpResponse(result)
