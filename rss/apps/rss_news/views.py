@@ -43,11 +43,25 @@ def register(request):
 
 
 def register_user(request):
+	if request.POST:
+		user_name = request.POST["user_name"]
+		email = request.POST["email"]
+		password = request.POST["password"]
+		repeat_password = request.POST["repeat_password"]
+		return HttpResponseRedirect("/")
+	else:
+		return HttpResponse(result)
 
-	user_name = request.POST["user_name"]
-	email = request.POST["email"]
-	password = request.POST["password"]
-	repeat_password = request.POST["repeat_password"]
-	print(user_name, password, email, repeat_password)
 
-	return HttpResponseRedirect("/")
+def check_user_name(request):
+	if request.GET:
+		user_name = request.GET["user_name"]
+
+		names = set(["Odmin", "Eblo", "Petuh", "Vanychka"]) # (), {}
+		if user_name in names:
+			return HttpResponse("no", content_type='text/html')
+		else:
+			return HttpResponse("ok", content_type='text/html')
+
+	else:
+		return HttpResponse("no", content_type='text/html')
