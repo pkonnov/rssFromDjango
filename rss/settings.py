@@ -115,6 +115,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+MEDIA_URL = '/static/media/'
+STATIC_ROOT = '/home/kiril/desktop/git/rssFromDjango/rss/apps/rss_news/static/'
+MEDIA_ROOT = '/home/kiril/desktop/git/rssFromDjango/rss/apps/rss_news/static/media/'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
