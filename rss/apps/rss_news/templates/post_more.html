@@ -7,6 +7,7 @@
 <div class="container">
 	<div class="row d-flex justify-content-center">
 			<div class="col-sm-6">
+				{% if post.image %}<img src="{{ MEDIA_URL }}{{ post.image.url }}" alt="" class="img-thumbnail">{% endif %}
 				<h1>{{ post.title }}</h1>
 				<span class="badge badge-info">{{ post.date }}</span>
 				<p>{{ post.text }}</p>
